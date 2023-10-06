@@ -58,10 +58,8 @@ class EjercicioCalificadoContacto : AppCompatActivity() {
         binding.btnLlamar.setOnClickListener {
 
             val phoneNumberUri = "tel:$cellphone"
-
             val intent = Intent(Intent.ACTION_DIAL)
             intent.data = Uri.parse(phoneNumberUri)
-
             startActivity(intent)
         }
 
