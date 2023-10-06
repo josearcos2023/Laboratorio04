@@ -20,10 +20,6 @@ class EjercicioCalificadoContacto : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityEjercicioCalificadoContactoBinding.inflate(layoutInflater)
-        val cellphone = binding.contactCellphone.text.toString()
-        val email = binding.contactEmail.text.toString()
-        val celular = binding.contactCellphone.text.toString()
-
         val view = binding.root
 
         setContentView(view)
@@ -46,16 +42,18 @@ class EjercicioCalificadoContacto : AppCompatActivity() {
         }
 
         binding.btnSms.setOnClickListener {
+            val cellphone = binding.contactCellphone.text.toString()
 
-            val smsUri = "sms:$cellphone"
+            val smsUri = "smsto:$cellphone"
 
-            val intent = Intent(Intent.ACTION_VIEW)
+            val intent = Intent(Intent.ACTION_SENDTO)
             intent.data = Uri.parse(smsUri)
 
             startActivity(intent)
         }
 
         binding.btnLlamar.setOnClickListener {
+            val cellphone = binding.contactCellphone.text.toString()
 
             val phoneNumberUri = "tel:$cellphone"
             val intent = Intent(Intent.ACTION_DIAL)
@@ -64,6 +62,7 @@ class EjercicioCalificadoContacto : AppCompatActivity() {
         }
 
         binding.btnCorreo.setOnClickListener {
+            val email = binding.contactEmail.text.toString()
 
             val emailUri = Uri.parse("mailto:$email")
 
@@ -74,8 +73,8 @@ class EjercicioCalificadoContacto : AppCompatActivity() {
         }
 
         binding.btnWsp.setOnClickListener {
-
-            val url = "https://api.whatsapp.com/send?phone=$celular"
+            val cellphone = binding.contactCellphone.text.toString()
+            val url = "https://api.whatsapp.com/send?phone=$cellphone"
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(url)
 

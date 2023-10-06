@@ -17,15 +17,16 @@
             android:id="@+id/contacto"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_margin="20dp"
             app:layout_constraintStart_toStartOf="@id/card"
             app:layout_constraintEnd_toEndOf="@id/card"
-            >
-
+            android:layout_gravity="center">
             <LinearLayout
+                android:id="@+id/Contenido"
                 android:layout_height="match_parent"
                 android:layout_width="wrap_content"
                 android:orientation="vertical"
-                android:layout_gravity="center">
+                >
                 <ImageView
                     android:id="@+id/album"
                     android:src="@drawable/img_imposible"
